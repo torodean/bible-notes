@@ -1,0 +1,149 @@
+
+
+
+%Rename the bibliography to References.
+\renewcommand\bibname{References}
+
+
+%%% Header and Footer Info
+\pagestyle{fancy}
+\fancyhead[LO]{\small {\textbf{Antonius' Bible Notes -- Version \version}}}
+\fancyhead[RE]{\small {\textbf{Antonius' Bible Notes -- Version \version}}}
+\fancyhead[C]{}
+\fancyhead[RO]{\small \thepage}
+\fancyhead[LE]{\small \thepage}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+
+
+%re-defines the plain page style
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\rhead{\thepage}
+	\renewcommand{\headrulewidth}{0pt}}
+
+
+%Rename the bibliography to References.
+\renewcommand\bibname{References}
+
+% Makes a chapter with no title
+\makeatletter
+\newcommand{\unchapter}[1]{%
+	\begingroup
+	\let\@makechapterhead\@gobble % make \@makechapterhead do nothing
+	\chapter{#1}
+	\endgroup
+}
+\makeatother
+
+
+
+% Customize chapter heading to remove "Chapter #" prefix
+\titleformat{\chapter}[display]
+{} % Font and size of chapter heading
+{} % No label (removes "Chapter N")
+{0pt} % No separation
+{\normalfont\Huge\bfseries} % Chapter title/name formatting
+\titlespacing*{\chapter}{0pt}{0pt}{0pt} % Adjust spacing: left, before, after
+
+
+% Command for book title and description: \booktitle{name}{desc}
+\newcommand{\booktitle}[2]{%
+	\chapter{#1}                % Chapter name
+	\rule{\textwidth}{0.5pt}\\  % Line below title
+	\small #2 \\                % Description in small font
+	\rule{\textwidth}{0.5pt}    % Line below description
+	\vspace{0.2cm}              % Space after chapter section
+}
+
+
+% remove tabs for new parahraphs.
+\setlength{\parindent}{0pt}
+
+
+% Define a counter for Bible chapters (sections)
+\newcounter{biblechapter}
+\renewcommand{\thebiblechapter}{\arabic{biblechapter}}
+
+% Command to define a Bible chapter with title and description
+\newcommand{\bookchapter}[1]{%
+	\refstepcounter{biblechapter}%
+	\setcounter{bverse}{0}% Reset verse counter
+	\section*{Chapter \thebiblechapter: \large #1}%
+	\addcontentsline{toc}{section}{Chapter \thebiblechapter: #1}%
+}
+
+
+% Counter for inline notes (resets with each verse)
+\newcounter{bversenote}
+
+% Boolean flag to track whether any notes have been used after a verse
+\newif\ifnotesafterverse
+\notesafterversefalse
+
+% Define verse counter and reset it at each new section
+\newcounter{bverse}[section]
+\renewcommand{\thebverse}{\arabic{bverse}}
+
+% Verse command
+\newcommand{\bverse}[1]{%
+	\ifnotesafterverse\vspace{1em}\notesafterversefalse\fi%
+	\setcounter{bversenote}{0}%
+	\refstepcounter{bverse}%
+	\textsuperscript{\thebverse}#1\ \ignorespaces%
+}
+
+
+% Inline marker that accepts a custom symbol/char and stores it for the note
+\newcommand{\vmark}[1]{%
+	\refstepcounter{bversenote}%
+	\textsuperscript{#1}%
+}
+
+% History note
+\newcommand{\historicalnote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent\hspace*{2em}%
+	{\footnotesize\color{gray!60!black}#1 - History:~#2}\par%
+}
+
+% Translation note
+\newcommand{\translationnote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent\hspace*{2em}%
+	{\footnotesize\color{violet!80!black}#1 - Translation:~#2}\par%
+}
+
+% Context note (literary, cultural, narrative)
+\newcommand{\contextnote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent\hspace*{2em}%
+	{\footnotesize\color{green!50!black}#1 - Context:~#2}\par%
+}
+
+% Scientific reference note
+\newcommand{\sciencenote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent\hspace*{2em}%
+	{\footnotesize\color{red!60!black}#1 - Science:~#2}\par%
+}
+
+% Questions (reader or theological questions)
+\newcommand{\questionnote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent\hspace*{2em}%
+	{\footnotesize\color{orange!70!black}#1 - Question:~#2}\par%
+}
+
+% General note (uncategorized)
+\newcommand{\generalmnote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent\hspace*{2em}%
+	{\footnotesize\color{blue!70!black}#1 - Note:~#2}\par%
+}
+
+% Reset counter at start of each verse
+\pretocmd{\bverse}{\setcounter{bversenote}{0}}{}{}
+
+
