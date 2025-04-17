@@ -1,3 +1,5 @@
+#!/bin/python3
+
 # generate_bible_books.py
 
 books = [
@@ -18,6 +20,7 @@ books = [
 ]
 
 for book in books:
-    filename = book.replace(" ", "_").replace("1_", "1").replace("2_", "2").replace("3_", "3") + ".tex"
+    filename = book.replace(" ", "_").replace("1_", "1").replace("2_", "2").replace("3_", "3").lower() + ".tex"
     with open(filename, "w", encoding="utf-8") as f:
         f.write(f"\\booktitle{{{book}}}{{}}\n")
+        f.write("\\thispagestyle{fancy}\n")
