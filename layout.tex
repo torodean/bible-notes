@@ -215,7 +215,14 @@
 	\end{minipage}\par%
 }
 
-
+% Literary note (style, metaphor, genre)
+\newcommand{\literarynote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{teal!70!black}#1 - \faFeather:~#2}%
+	\end{minipage}\par%
+}
 
 % Reset counter at start of each verse
 \pretocmd{\bverse}{\setcounter{bversenote}{0}}{}{}
