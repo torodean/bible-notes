@@ -184,9 +184,28 @@
 	\global\notesafterversetrue%
 	\par\noindent%
 	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
-		{\footnotesize\color{yellow!70!black}#1 - \faComment:~#2}%
+		{\footnotesize\color{yellow!70!black}#1 - \faMicrophone:~#2}%
 	\end{minipage}\par%
 }
+
+% Cross-reference note
+\newcommand{\crossrefnote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{teal!60!black}#1 - \faLink:~#2}%
+	\end{minipage}\par%
+}
+
+% Geographical note
+\newcommand{\geographynote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{brown!70!black}#1 - \faMap:~#2}%
+	\end{minipage}\par%
+}
+
 
 % Reset counter at start of each verse
 \pretocmd{\bverse}{\setcounter{bversenote}{0}}{}{}
@@ -197,7 +216,7 @@
 % A custom command to make quoted red text.
 \newcommand{\jesus}[1]{\textcolor{red}{``#1''}}
 
-
+% A section-like marker for various sections.
 \newcommand{\bmarker}[1]{%
 	\begin{flushright}
 		\textbf{#1}%
@@ -206,11 +225,13 @@
 		\rule{\linewidth}{0.4pt}%
 	\end{flushright}
 }
-
 \newcommand{\bmarkerdown}[1]{%
 	\bmarker{#1 \faArrowCircleDown}
 }
-
 \newcommand{\bmarkerup}[1]{%
 	\bmarker{#1 \faArrowCircleUp}
 }
+
+
+% squish the space between itemize items.
+\setlist[itemize]{itemsep=0pt, topsep=0pt}
