@@ -64,7 +64,8 @@
 	\setbookname{#1}             % Set the book name for verse labeling.
 	\addcontentsline{toc}{chapter}{#1}
 	\rule{\textwidth}{0.5pt}\\  % Line below title
-	\small #2 \\                % Description in small font
+	\vspace{-0.4em} \\
+	\small \textbf{Summary:} #2 \\  % Description in small font
 	\rule{\textwidth}{0.5pt}    % Line below description
 	\vspace{0.2cm}              % Space after chapter section
 }
@@ -82,6 +83,7 @@
 
 % Command to define a Bible chapter with title and description
 \newcommand{\bookchapter}[1]{%
+	\thispagestyle{fancy}   % Set the page style to fancy.
 	\refstepcounter{biblechapter}%
 	\setcounter{bverse}{0}% Reset verse counter
 	\section*{Chapter \thebiblechapter: \large #1}%
