@@ -105,7 +105,7 @@
 	\setcounter{bversenote}{0}%
 	\refstepcounter{bverse}%
 	\label{\currentbook\space\thebiblechapter:\thebverse}%
-	\textsuperscript{\thebverse}#1\ \ignorespaces%
+	\textsuperscript{\textbf{\thebverse}}#1\ \ignorespaces%
 }
 
 % A custom command for referencing scriptures.
@@ -182,7 +182,7 @@
 	\global\notesafterversetrue%
 	\par\noindent%
 	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
-		{\footnotesize\color{yellow!70!black}#1 - \faStickyNote:~#2}%
+		{\footnotesize\color{yellow!70!black}#1 - \faComment:~#2}%
 	\end{minipage}\par%
 }
 
