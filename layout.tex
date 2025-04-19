@@ -196,3 +196,21 @@
 
 % A custom command to make quoted red text.
 \newcommand{\jesus}[1]{\textcolor{red}{``#1''}}
+
+
+\newcommand{\bmarker}[1]{%
+	\begin{flushright}
+		\textbf{#1}%
+				
+		\vspace{-.8em}%		
+		\rule{\linewidth}{0.4pt}%
+	\end{flushright}
+}
+
+\newcommand{\bmarkerdown}[1]{%
+	\bmarker{#1 \faArrowCircleDown}
+}
+
+\newcommand{\bmarkerup}[1]{%
+	\bmarker{#1 \faArrowCircleUp}
+}
