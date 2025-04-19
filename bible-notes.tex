@@ -29,30 +29,27 @@
 %Copywrite page
 \include{copywrite}
 
-%Preface page
-%\include{preface} %TODO
-
 % Add a Table of Contents
 \tableofcontents
 
+%Preface page
+\include{preface}
+
 %Begins blank page.
-\thispagestyle{empty}
-\newpage
-\vspace*{\stretch{1}}
-\begin{center}
-	\textit{This page intentionally left blank.\\ (Yes, this is a contradiction.)}
-\end{center}
-\vspace*{\stretch{1}}
-	
-\newpage  % Start new page after the TOC
+%\thispagestyle{empty}
+%\newpage
+%\vspace*{\stretch{1}}
+%\begin{center}
+%	\textit{This page intentionally left blank.\\ (Yes, this is a contradiction.)}
+%\end{center}
+%\vspace*{\stretch{1}}	
+%\newpage  % Start new page after the TOC
 
 % A file for testing the layout/designs.
 %\include{books/test}
 
-% Sets the page style to fancy.
-\pagestyle{fancy} % TODO - doesn't quite work.
-
 % The pentateuch books.
+%\include{books/test}
 \include{books/genesis}
 %\include{books/exodus}
 %\include{books/leviticus}
@@ -61,9 +58,6 @@
 
 
 
-
-% Clears the page style
-\unchapter{resources}
 
 %Begin the backmatter.
 \backmatter

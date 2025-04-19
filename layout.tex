@@ -48,9 +48,20 @@
 \titlespacing*{\chapter}{0pt}{0pt}{0pt} % Adjust spacing: left, before, after
 
 
+% Store the current book name for later use
+\newcommand{\setbookname}[1]{\def\currentbookname{#1}}
+\newcommand{\currentbook}{} % initially empty
+
+% Define a counter for Bible chapters (sections)
+\newcounter{biblechapter}
+\renewcommand{\thebiblechapter}{\arabic{biblechapter}}
+
 % Command for book title and description: \booktitle{name}{desc}
 \newcommand{\booktitle}[2]{%
+	\setcounter{biblechapter}{0}       % Reset chapter counter
+	\renewcommand{\currentbook}{#1} % set current book
 	\chapter*{#1}                % Chapter name
+	\setbookname{#1}             % Set the book name for verse labeling.
 	\addcontentsline{toc}{chapter}{#1}
 	\rule{\textwidth}{0.5pt}\\  % Line below title
 	\small #2 \\                % Description in small font
@@ -69,10 +80,6 @@
 \setlength{\parindent}{0pt}
 
 
-% Define a counter for Bible chapters (sections)
-\newcounter{biblechapter}
-\renewcommand{\thebiblechapter}{\arabic{biblechapter}}
-
 % Command to define a Bible chapter with title and description
 \newcommand{\bookchapter}[1]{%
 	\refstepcounter{biblechapter}%
@@ -80,7 +87,6 @@
 	\section*{Chapter \thebiblechapter: \large #1}%
 	\addcontentsline{toc}{section}{Chapter \thebiblechapter: #1}%
 }
-
 
 % Counter for inline notes (resets with each verse)
 \newcounter{bversenote}
@@ -98,9 +104,18 @@
 	\ifnotesafterverse\vspace{1em}\notesafterversefalse\fi%
 	\setcounter{bversenote}{0}%
 	\refstepcounter{bverse}%
+	\label{\currentbook\space\thebiblechapter:\thebverse}%
 	\textsuperscript{\thebverse}#1\ \ignorespaces%
 }
 
+% A custom command for referencing scriptures.
+\newcommand{\bref}[1]{\hyperref[#1]{#1}}
+
+% Redefine \ref to display the full reference string (e.g., Genesis 3:12)
+\renewcommand{\ref}[1]{%
+	\edef\temp{\noexpand\csname #1\endcsname}%
+	\temp % Display the full reference text
+}
 
 % Inline marker that accepts a custom symbol/char and stores it for the note
 \newcommand{\vmark}[1]{%
@@ -111,46 +126,62 @@
 % History note
 \newcommand{\historicalnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent\hspace*{2em}%
-	{\footnotesize\color{gray!60!black}#1 - History:~#2}\par%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{gray!60!black}#1 - \faLandmark:~#2}%
+	\end{minipage}\par%
 }
 
 % Translation note
 \newcommand{\translationnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent\hspace*{2em}%
-	{\footnotesize\color{violet!80!black}#1 - Translation:~#2}\par%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{violet!80!black}#1 - \faLanguage:~#2}%
+	\end{minipage}\par%
 }
 
 % Context note (literary, cultural, narrative)
 \newcommand{\contextnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent\hspace*{2em}%
-	{\footnotesize\color{green!50!black}#1 - Context:~#2}\par%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{green!50!black}#1 - \faCompass:~#2}%
+	\end{minipage}\par%
 }
 
 % Scientific reference note
 \newcommand{\sciencenote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent\hspace*{2em}%
-	{\footnotesize\color{red!60!black}#1 - Science:~#2}\par%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{red!60!black}#1 - \faFlask:~#2}%
+	\end{minipage}\par%
 }
 
 % Questions (reader or theological questions)
 \newcommand{\questionnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent\hspace*{2em}%
-	{\footnotesize\color{orange!70!black}#1 - Question:~#2}\par%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{orange!70!black}#1 - \faQuestionCircle:~#2}%
+	\end{minipage}\par%
 }
 
 % General note (uncategorized)
 \newcommand{\generalmnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent\hspace*{2em}%
-	{\footnotesize\color{blue!70!black}#1 - Note:~#2}\par%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+		{\footnotesize\color{blue!70!black}#1 - \faStickyNote:~#2}%
+	\end{minipage}\par%
 }
 
 % Reset counter at start of each verse
 \pretocmd{\bverse}{\setcounter{bversenote}{0}}{}{}
 
+% A custom tab for indenting paragraphs.
+\newcommand{\tab}{\hspace*{2em}}
 
+% A custom command to make quoted red text.
+\newcommand{\jesus}[1]{\textcolor{red}{``#1''}}
