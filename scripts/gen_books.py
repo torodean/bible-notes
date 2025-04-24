@@ -23,7 +23,7 @@ books_data = [
 ]
 
 # Base directory for all book folders
-base_dir = "books"
+base_dir = "../books"
 
 # Create base directory if it doesn't exist
 if not os.path.exists(base_dir):
