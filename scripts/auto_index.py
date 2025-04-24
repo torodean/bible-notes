@@ -15,9 +15,11 @@ def read_words(file_path):
         print(f"Error reading index_words.txt: {e}")
         exit(1)
 
+import re
+
 def process_tex_file(file_path, words):
     """
-    Process a single .tex file, replacing words with \idx{word}.
+    Process a single .tex file, replacing words and their plurals with word\index{Word}.
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -25,30 +27,35 @@ def process_tex_file(file_path, words):
 
         modified = False
         for word in words:
-            # Capitalize the word for the index keyword (e.g., "heaven" -> "Heaven")
             capitalized_word = word.capitalize()
-            # Regex to match word in the form word\index{...} (case-insensitive for word)
-            # Capture the matched word to preserve its case
-            pattern = rf'({re.escape(word)})\\index{{[^}}]*}}'
-            # Replacement preserves the matched word's case (group 1) and uses capitalized word
-            replacement = r'\1\\index{' + capitalized_word + '}'
+
+            # Match base word plus optional plural suffix (naive pluralization)
+            pattern = rf'(?<!\\index{{)\b({re.escape(word)}(es|s)?)\b(?!\\index{{[^}}]*}})'
+
+            def repl(match):
+                original_text = match.group(1)
+                replacement_text = f"{original_text}\\index{{{capitalized_word}}}"
+                GREEN = "\033[92m"
+                RESET = "\033[0m"
+                print(f"{GREEN}Replacing '{original_text}' with '{replacement_text}' in {file_path}{RESET}")
+                return replacement_text
+
             if re.search(pattern, content, re.IGNORECASE):
-                content = re.sub(pattern, replacement, content, flags=re.IGNORECASE)
+                content = re.sub(pattern, repl, content, flags=re.IGNORECASE)
                 modified = True
 
         if modified:
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(content)
             print(f"Updated: {file_path}")
-        else:
-            print(f"No changes needed: {file_path}")
 
     except Exception as e:
         print(f"Error processing {file_path}: {e}")
 
+
 def main():
     # Set up argument parser
-    parser = argparse.ArgumentParser(description="Replace words in .tex files with \\idx{word}")
+    parser = argparse.ArgumentParser(description="Replace words in .tex files with word\\index{Word}")
     parser.add_argument('-i', '--index', type=str, help="Path to the index file to use.")
     parser.add_argument('-f', '--folder', type=str, help="Path to the folder containing .tex files")
     args = parser.parse_args()
