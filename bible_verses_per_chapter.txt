@@ -1,3 +1,9 @@
+book	verse
+Genesis 1:31	31
+Genesis 2:25	25
+Genesis 3:24	24
+Genesis 4:26	26
+Genesis 5:32	32
 Genesis 6:22	22
 Genesis 7:24	24
 Genesis 8:22	22
