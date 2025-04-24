@@ -670,14 +670,14 @@ Ecclesiastes 9:18	18
 Ecclesiastes 10:20	20
 Ecclesiastes 11:10	10
 Ecclesiastes 12:14	14
-Song of Solomon 1:17	17
-Song of Solomon 2:17	17
-Song of Solomon 3:11	11
-Song of Solomon 4:16	16
-Song of Solomon 5:16	16
-Song of Solomon 6:13	13
-Song of Solomon 7:13	13
-Song of Solomon 8:14	14
+Song_of_Solomon 1:17	17
+Song_of_Solomon 2:17	17
+Song_of_Solomon 3:11	11
+Song_of_Solomon 4:16	16
+Song_of_Solomon 5:16	16
+Song_of_Solomon 6:13	13
+Song_of_Solomon 7:13	13
+Song_of_Solomon 8:14	14
 Isaiah 1:31	31
 Isaiah 2:22	22
 Isaiah 3:26	26
