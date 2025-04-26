@@ -111,8 +111,8 @@ def process_tex_file(file_path, words):
 def main():
     # Set up argument parser
     parser = argparse.ArgumentParser(description="Replace words in .tex files with word\\index{Word}")
-    parser.add_argument('-i', '--index', type=str, help="Path to the index file to use.")
-    parser.add_argument('-f', '--folder', type=str, help="Path to the folder containing .tex files")
+    parser.add_argument('-i', '--index', type=str, default="index_list.txt", help="Path to the index file to use.")
+    parser.add_argument('-f', '--folder', type=str, default="../books", help="Path to the folder containing .tex files")
     args = parser.parse_args()
 
     # Validate folder
