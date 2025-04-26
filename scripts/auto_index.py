@@ -40,8 +40,8 @@ def process_tex_file(file_path, words):
         for word in words:
             capitalized_word = word.capitalize()
 
-            # Match word plus optional plural, excluding \index{} and \textit{}
-            pattern = rf'(?<!\\index{{)(?<!\\textit{{)\b({re.escape(word)}(es|s)?)\b(?!\\index{{[^}}]*}})'
+            # Match word plus optional plural, excluding \index{}, \textit{}, and paths
+            pattern = rf'(?<!\\index{{)(?<!\\textit{{)(?<![\\/])(?<!{{)\b({re.escape(word)}(es|s)?)\b(?!\\index{{[^}}]*}})'
             def repl(match):
                 original_text = match.group(1)
                 replacement_text = f"{original_text}\\index{{{capitalized_word}}}"
