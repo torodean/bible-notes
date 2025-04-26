@@ -83,9 +83,6 @@
 	\addcontentsline{toc}{section}{Chapter \thebiblechapter: #1}%
 }
 
-% Counter for inline notes (resets with each verse)
-\newcounter{bversenote}
-
 % Boolean flag to track whether any notes have been used after a verse
 \newif\ifnotesafterverse
 \notesafterversefalse
@@ -97,7 +94,6 @@
 % Verse command
 \newcommand{\bverse}[1]{%
 	\ifnotesafterverse\vspace{1em}\notesafterversefalse\fi%
-	\setcounter{bversenote}{0}%
 	\refstepcounter{bverse}%
 	\label{\currentbook\space\thebiblechapter:\thebverse}%
 	\textsuperscript{\textbf{\thebverse}}#1\ \ignorespaces%
@@ -114,7 +110,6 @@
 
 % Inline marker that accepts a custom symbol/char and stores it for the note
 \newcommand{\vmark}[1]{%
-	\refstepcounter{bversenote}%
 	\textsuperscript{#1}%
 }
 
@@ -216,9 +211,6 @@
 		{\footnotesize\color{teal!70!black}#1 - \faFeather:~#2}%
 	\end{minipage}\par%
 }
-
-% Reset counter at start of each verse
-\pretocmd{\bverse}{\setcounter{bversenote}{0}}{}{}
 
 % A custom tab for indenting paragraphs.
 \newcommand{\tab}{\hspace*{2em}}
