@@ -20,18 +20,27 @@ import re
 def process_tex_file(file_path, words):
     """
     Process a single .tex file, replacing words and their plurals with word\index{Word}.
+    Excludes text within \cite{} blocks.
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
+        # Step 1: Mask \cite{} blocks
+        cite_placeholder = "__CITE_PLACEHOLDER_{}__"
+        cite_blocks = []
+        def store_cite(match):
+            cite_blocks.append(match.group(0))
+            return cite_placeholder.format(len(cite_blocks) - 1)
+
+        content = re.sub(r'\\cite\{[^}]*\}', store_cite, content)
+
         modified = False
         for word in words:
             capitalized_word = word.capitalize()
 
-            # Match base word plus optional plural suffix (naive pluralization)
+            # Match word plus optional plural, excluding \index{}
             pattern = rf'(?<!\\index{{)\b({re.escape(word)}(es|s)?)\b(?!\\index{{[^}}]*}})'
-
             def repl(match):
                 original_text = match.group(1)
                 replacement_text = f"{original_text}\\index{{{capitalized_word}}}"
@@ -43,6 +52,10 @@ def process_tex_file(file_path, words):
             if re.search(pattern, content, re.IGNORECASE):
                 content = re.sub(pattern, repl, content, flags=re.IGNORECASE)
                 modified = True
+
+        # Step 2: Restore \cite{} blocks
+        for i, cite in enumerate(cite_blocks):
+            content = content.replace(cite_placeholder.format(i), cite)
 
         if modified:
             with open(file_path, 'w', encoding='utf-8') as f:
