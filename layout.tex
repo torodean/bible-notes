@@ -1,7 +1,7 @@
 %%% Header and Footer Info
 \pagestyle{fancy}
-\fancyhead[LO]{\small {\textbf{Antonius' Bible Notes -- Version \version}}}
-\fancyhead[RE]{\small {\textbf{Antonius' Bible Notes -- Version \version}}}
+\fancyhead[LO]{\small {\textbf{Antonius' Bible Notes -- \version}}}
+\fancyhead[RE]{\small {\textbf{Antonius' Bible Notes -- \version}}}
 \fancyhead[C]{}
 \fancyhead[RO]{\small \thepage}
 \fancyhead[LE]{\small \thepage}
@@ -41,16 +41,23 @@
 \titlespacing*{\chapter}{0pt}{0pt}{0pt} % Adjust spacing: left, before, after
 
 
+% Define a counter for Bible Books (chapters)
+\newcounter{biblebook}[chapter]
+\renewcommand{\thebiblebook}{\arabic{biblebook}}
+\setcounter{biblebook}{0}
+
 % Store the current book name for later use
 \newcommand{\setbookname}[1]{\def\currentbookname{#1}}
 \newcommand{\currentbook}{} % initially empty
 
 % Define a counter for Bible chapters (sections)
-\newcounter{biblechapter}
+\newcounter{biblechapter}[section]
 \renewcommand{\thebiblechapter}{\arabic{biblechapter}}
 
 % Command for book title and description: \booktitle{name}{desc}
 \newcommand{\booktitle}[2]{%
+	\setcounter{chapter}{\thebiblebook}
+	\refstepcounter{biblebook}%
 	\setcounter{biblechapter}{0}       % Reset chapter counter
 	\renewcommand{\currentbook}{#1} % set current book
 	\chapter*{#1}                % Chapter name
@@ -60,7 +67,6 @@
 	\vspace{-0.4em} \\
 	\small \textbf{Summary:} #2 \\  % Description in small font
 	\rule{\textwidth}{0.5pt}    % Line below description
-	\vspace{0.2cm}              % Space after chapter section
 }
 
 
@@ -76,6 +82,7 @@
 
 % Command to define a Bible chapter with title and description
 \newcommand{\bookchapter}[1]{%
+	\setcounter{section}{\thebiblechapter}
 	\thispagestyle{fancy}   % Set the page style to fancy.
 	\refstepcounter{biblechapter}%
 	\setcounter{bverse}{0}% Reset verse counter
@@ -87,14 +94,16 @@
 \newif\ifnotesafterverse
 \notesafterversefalse
 
-% Define verse counter and reset it at each new section
-\newcounter{bverse}[section]
+% Define verse counter (subsection)
+\newcounter{bverse}[subsection]
 \renewcommand{\thebverse}{\arabic{bverse}}
 
 % Verse command
 \newcommand{\bverse}[1]{%
+	\setcounter{subsection}{\thebverse}
 	\ifnotesafterverse\vspace{1em}\notesafterversefalse\fi%
 	\refstepcounter{bverse}%
+	\typeout{Creating label: \currentbook\space\thebiblechapter:\thebverse}% Log label
 	\label{\currentbook\space\thebiblechapter:\thebverse}%
 	\textsuperscript{\textbf{\thebverse}}#1\ \ignorespaces%
 }
