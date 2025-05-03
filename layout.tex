@@ -99,14 +99,15 @@
 \renewcommand{\thebverse}{\arabic{bverse}}
 
 % Verse command
-\newcommand{\bverse}[1]{%
+\newcommand{\bverse}{%
 	\setcounter{subsection}{\thebverse}
 	\ifnotesafterverse\vspace{1em}\notesafterversefalse\fi%
 	\refstepcounter{bverse}%
-	\typeout{Creating label: \currentbook\space\thebiblechapter:\thebverse}% Log label
 	\label{\currentbook\space\thebiblechapter:\thebverse}%
-	\textsuperscript{\textbf{\thebverse}}#1\ \ignorespaces%
+	\textsuperscript{\textbf{\thebverse}}\ignorespaces%
 }
+
+
 
 % A custom command for referencing scriptures.
 \newcommand{\bref}[1]{\hyperref[#1]{#1}}
@@ -126,7 +127,7 @@
 \newcommand{\historicalnote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{gray!60!black}#1 - \faLandmark:~#2}%
 	\end{minipage}\par%
 }
@@ -135,7 +136,7 @@
 \newcommand{\translationnote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{violet!80!black}#1 - \faLanguage:~#2}%
 	\end{minipage}\par%
 }
@@ -144,7 +145,7 @@
 \newcommand{\contextnote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{green!50!black}#1 - \faCompass:~#2}%
 	\end{minipage}\par%
 }
@@ -153,7 +154,7 @@
 \newcommand{\sciencenote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{red!60!black}#1 - \faFlask:~#2}%
 	\end{minipage}\par%
 }
@@ -162,7 +163,7 @@
 \newcommand{\questionnote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{orange!70!black}#1 - \faQuestionCircle:~#2}%
 	\end{minipage}\par%
 }
@@ -171,7 +172,7 @@
 \newcommand{\generalnote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{blue!70!black}#1 - \faStickyNote:~#2}%
 	\end{minipage}\par%
 }
@@ -180,7 +181,7 @@
 \newcommand{\sermonnote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{yellow!60!black}#1 - \faMicrophone:~#2}%
 	\end{minipage}\par%
 }
@@ -189,7 +190,7 @@
 \newcommand{\crossrefnote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{teal!60!black}#1 - \faLink:~#2}%
 	\end{minipage}\par%
 }
@@ -198,7 +199,7 @@
 \newcommand{\geographynote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{brown!70!black}#1 - \faMap:~#2}%
 	\end{minipage}\par%
 }
@@ -207,7 +208,7 @@
 \newcommand{\doctrinenote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{purple!70!black}#1 - \faBookOpen:~#2}%
 	\end{minipage}\par%
 }
@@ -216,7 +217,7 @@
 \newcommand{\literarynote}[2]{%
 	\global\notesafterversetrue%
 	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\textwidth - 2em\relax}%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
 		{\footnotesize\color{teal!70!black}#1 - \faFeather:~#2}%
 	\end{minipage}\par%
 }
@@ -253,3 +254,10 @@
 
 % modify the index look
 \renewcommand{\indexname}{Index\\[-0.8em]\rule{\textwidth}{0.4pt}\vspace{0.2em}\thispagestyle{fancy}}
+
+% Create a quotation block for scripture quotations.
+\newenvironment{bquotation}
+  {\list{}{\leftmargin=1.8em \rightmargin=1.8em \topsep=0pt \parsep=0pt
+           \listparindent=0pt \itemindent=0pt}
+   \item\relax}
+  {\endlist}
