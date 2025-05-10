@@ -240,6 +240,15 @@
 	\end{minipage}\par%
 }
 
+% Timeline note (Passage of time, timekeeping, historical timeframes, etc)
+\newcommand{\timelinenote}[2]{%
+	\global\notesafterversetrue%
+	\par\noindent%
+	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+		{\footnotesize\color{orange!60!black}#1 - \faClock:~#2}%
+	\end{minipage}\par%
+}
+
 % A custom tab for indenting paragraphs.
 \newcommand{\tab}{\hspace*{2em}}
 
@@ -279,3 +288,6 @@
            \listparindent=0pt \itemindent=0pt}
    \item\relax}
   {\endlist}
+  
+% The word was is often added when translating to English. This is always ittalicized, so this command is just to save time.
+\newcommand{\was}{\textit{was} }
