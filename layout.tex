@@ -85,6 +85,7 @@
 	\setcounter{section}{\thebiblechapter}
 	\thispagestyle{fancy}   % Set the page style to fancy.
 	\refstepcounter{biblechapter}%
+	\label{\currentbook\space\thebiblechapter}%
 	\setcounter{bverse}{0}% Reset verse counter
 	\section*{Chapter \thebiblechapter: \large #1}%
 	\addcontentsline{toc}{section}{Chapter \thebiblechapter: #1}%
