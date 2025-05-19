@@ -128,128 +128,137 @@
 % History note
 \newcommand{\historicalnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{gray!60!black}#1 - \faLandmark:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Translation note
 \newcommand{\translationnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{violet!80!black}#1 - \faLanguage:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Context note (literary, cultural, narrative)
 \newcommand{\contextnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{green!50!black}#1 - \faCompass:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Scientific reference note
 \newcommand{\sciencenote}[2]{%
-	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
-		{\footnotesize\color{red!60!black}#1 - \faFlask:~#2}%
-	\end{minipage}\par%
+    \global\notesafterversetrue%
+    \par\begin{adjustwidth}{2em}{0pt}%
+        {\footnotesize\color{red!60!black}#1 - \faFlask:~#2}%
+    \end{adjustwidth}\par%
+   	\vspace{-0.5em}%
 }
 
 % Questions (reader or theological questions)
 \newcommand{\questionnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{orange!70!black}#1 - \faQuestionCircle:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % General note (uncategorized)
 \newcommand{\generalnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{blue!70!black}#1 - \faStickyNote:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % General note (uncategorized)
 \newcommand{\sermonnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{yellow!60!black}#1 - \faMicrophone:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Cross-reference note
 \newcommand{\crossrefnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{teal!60!black}#1 - \faLink:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Geographical note
 \newcommand{\geographynote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{brown!70!black}#1 - \faMap:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Theological insight (doctrine) note
 \newcommand{\doctrinenote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{purple!70!black}#1 - \faBookOpen:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Literary note (style, metaphor, genre)
 \newcommand{\literarynote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{teal!70!black}#1 - \faFeather:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Philosophical note (existential, metaphysical, interpretive ideas)
 \newcommand{\philosophicalnote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{cyan!60!black}#1 - \faInfinity:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Alternate Translation note
 \newcommand{\alttranslation}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{black}#1 - \faExchange*:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
 
 % Timeline note (Passage of time, timekeeping, historical timeframes, etc)
 \newcommand{\timelinenote}[2]{%
 	\global\notesafterversetrue%
-	\par\noindent%
-	\hspace*{2em}\begin{minipage}{\dimexpr\linewidth - 2em\relax}%
+	\par\begin{adjustwidth}{2em}{0pt}%
 		{\footnotesize\color{orange!60!black}#1 - \faClock:~#2}%
-	\end{minipage}\par%
+	\end{adjustwidth}\par%
+	\vspace{-0.5em}%
 }
+
+\newcommand{\archaeologicalnote}[2]{%
+    \global\notesafterversetrue%
+    \par\begin{adjustwidth}{2em}{0pt}%
+        {\footnotesize\color{olive!70!black}#1 - \faBone:~#2}%
+    \end{adjustwidth}\par%
+   	\vspace{-0.5em}%
+}
+
 
 % A custom tab for indenting paragraphs.
 \newcommand{\tab}{\hspace*{2em}}
