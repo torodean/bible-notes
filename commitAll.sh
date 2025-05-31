@@ -10,6 +10,9 @@ git pull || { echo "git pull failed"; exit 1; }
 echo "..."
 git status
 echo "..."
+
+# Update the version number and add everything to the repo.
+python3 scripts/increment_version.py
 git add -A
 echo "..."
 git status
