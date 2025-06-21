@@ -300,6 +300,23 @@
    \item\relax}
   {\endlist}
   
+
+\newcommand{\todo}[1]{%
+	\vspace{1em}\par\noindent%
+	\setlength{\fboxsep}{10pt} % Adjust the padding
+	\fcolorbox{orange}{orange!20}{%
+		\begin{minipage}{\dimexpr\linewidth-2\fboxsep}%
+			\vspace{5pt} % Adjust the vertical spacing
+			\centering
+			\textcolor{orange!90!black}{\textbf{\faClipboardList\ TODO:\ #1}}
+			\vspace{5pt} % Adjust the vertical spacing
+		\end{minipage}%
+	}%
+	\par
+}
+
+
+
   
 % Used for differentiating names.
 \newcommand{\name}[1]{\textsc{#1}\index{#1}}
