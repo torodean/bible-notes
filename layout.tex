@@ -301,6 +301,7 @@
   {\endlist}
   
 
+% defines a todo block to show that something needs revisited.
 \newcommand{\todo}[1]{%
 	\vspace{1em}\par\noindent%
 	\setlength{\fboxsep}{10pt} % Adjust the padding
@@ -314,6 +315,28 @@
 	}%
 	\par
 }
+
+
+
+% This defines a block t oadd a note about a potential sermon/sermonette topic that I can do which I find while doing studying.
+\newtcolorbox{sermontodo}{
+  colback=gray!10,      % light background
+  colframe=gray!50,     % border color
+  boxrule=0.5pt,        % thin border
+  arc=2pt,              % small corner rounding
+  left=6pt, right=6pt,  % horizontal padding
+  top=4pt, bottom=4pt,  % vertical padding
+  width=\linewidth,
+  before skip=1em,
+  after skip=1em
+}
+\newcommand{\addsermon}[1]{%
+  \begin{sermontodo}
+    \textcolor{gray!40!black}{\faChurch\ \textbf{TODO – Sermon/Sermonette:} #1}
+  \end{sermontodo}
+}
+
+
 
 
 
