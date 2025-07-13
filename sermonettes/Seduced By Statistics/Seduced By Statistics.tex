@@ -101,12 +101,17 @@ This example begins with a simple statement:
 \begin{quotation}
 ``The rapid Polymerase Chain Reaction (PCR) COVID test is 95\% accurate!''
 \end{quotation}
-Assume this statement is completely true. There is no lying here - just a simple statement of fact. This statement alone would give you great confidence in the PCR test. If you got tested for COVID using this test, the results should be quite accurate, because it is indeed `95\% accurate!' So therefore, if you were to take one of these tests, and it gave you a positive result (meaning the test thinks you have COVID), what's the likelihood that you actually have COVID? Well, most reasonable people might conclude that there's a 95\% change you have COVID. That seems reasonable. 
+Assume this statement is completely true. There is no lying here - just a simple statement of fact. This statement alone would give you great confidence in the PCR test. If you got tested for COVID using this test, the results should be quite accurate, because it is indeed `95\% accurate!' So therefore, if you were to take one of these tests, and it gave you a positive result (meaning the test thinks you have COVID), what's the likelihood that you actually have COVID? Well, most reasonable people might conclude that there's a 95\% change you have COVID. That seems reasonable.
+
+\begin{Figure}
+\centering
+\includegraphics[width=\textwidth]{infection_diagram.jpg}
+{\footnotesize Figure 1. This diagram visually represents the concept of COVID testing accuracy using simplified proportions. While it does not show exactly 100,000 individuals, 10 infected cases, or 5,000 false positives, it illustrates the dramatic contrast between true positives (black) and false positives (orange) when testing a large population with a low infection rate—even when using a test with 95\% accuracy.}
+\end{Figure}
 
 Let us now setup a hypothetical scenario. Suppose we have a disease, say COVID, which infects about 10 people per 100,000 people at any given moment (that's almost a million people at any given time), which is the number reported by TIME magazine in June of 2024 \cite{TIME}. What that means is that if you take 100,000 random people, 10 of them will be infected with COVID. This was around the same time that PCR was being rolled out to test \textit{everyone}. So then what would happen if you did test everyone?
 
 Recall that the PCR test we're using is 95\% accurate. Which means if we test someone, there's a 95\% chance that the result will be accurate. So let us take our group of 100,000 random people and test every single one of them. We begin testing them one by one, and each test is 95\% accurate. For the sake of argument, let's say all 10 people who are infected give an accurate result (hooray). But as we test those who are not infected, we get an incorrect result 5\% of the time. This means that 5\% of the people in our group of 100,000 will have incorrect results. Therefore, there will be about 5,000 people who test \textit{positive}, even though they do \textit{not} have COVID. But the other 95,000 people will have tested accurately. That seems like good odds, until you re-ask the question - what's the likelihood that you actually have COVID? There were 10 people with COVID who tested positive, and then 5,000 people without COVID who tested positive. Therefore, if you are in that group with a positive test, there is only a $\frac{10}{5010} \approx 0.2\%$ chance that you \textit{actually} have COVID! That is while using a test which is 95\% accurate!
- 
 
 
 
