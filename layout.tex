@@ -270,8 +270,9 @@
 
 % A custom command to make quoted red text.
 \newcommand{\jesus}[1]{\textcolor{red}{``#1''}}
-% A command to create the LORD text different from the rest - representing God's proper name.
+% A command to create the LORD and GOD text different from the rest - representing God's proper name.
 \newcommand{\lord}{L\textsc{ord}\index{LORD}\xspace}
+\newcommand{\god}{G\textsc{od}\index{GOD}\xspace}
 % This one will ignore the space at the end. Use this when needing /vmark instead of \lord\vmark{}.
 \newcommand{\lordvmark}[1]{L\textsc{ord}\index{LORD}\vmark{#1}} 
 
@@ -347,7 +348,13 @@
 
   
 % Used for differentiating names.
-\newcommand{\name}[1]{\textsc{#1}\index{#1}}
+\newcommand{\name}[1]{\textsc{#1}\index{Names:!#1}}
+  
+% Used for differentiating locations.
+\newcommand{\location}[1]{#1\index{Locations:#1}}
+  
+% Used for differentiating peoples (e.g., Amorite, Amalekites, Israelites, etc).
+\newcommand{\people}[1]{#1\index{Peoples:#1}}
 
 % These words are often added when translating to English. This is always ittalicized, so this command is just to save time.
 \newcommand{\was}{\textit{was} }
