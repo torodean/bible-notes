@@ -1,0 +1,59 @@
+\documentclass[openany,twoside, notitlepage,letterpaper,11pt]{book}
+
+%%% These are the packages that are used
+\input{./resources/Packages}
+
+%This is where settings for the latex file are stored.
+\input{./resources/Settings}
+
+%This is where custom definitions and variables are defined and stored.
+\input{./resources/Definitions}
+
+%creates the title page
+\title{\huge UCG Austin Sound Setup Guide}
+\date{Last date modified: \today}
+\author{Compiled by: Antonius W. Torode \\ Written in: \LaTeX}
+
+\makeindex
+%\addcontentsline{toc}{chapter}{Index}
+
+
+%%% Document Starts now
+\begin{document}
+
+%Begins title page.	
+\maketitle
+
+
+%Begins table of contents
+\tableofcontents
+
+
+%Begin the mainmatter.
+\setlength{\parindent}{0pt}
+\mainmatter
+\pagestyle{fancy}
+\setlength{\parindent}{25pt}
+
+%Stuff page
+\include{./resources/stuff}
+
+%Setup page
+\include{./resources/setup}
+
+%Services page
+\include{./resources/Services}
+
+%Cleanup page
+\include{./resources/cleanup}
+
+%Keyboard Shortcuts page
+\include{./resources/shortcuts}
+
+%Images page
+\include{./resources/images}
+
+%Troubleshooting page
+\include{./resources/troubleshooting}
+
+\end{document}
