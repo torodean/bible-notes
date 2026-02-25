@@ -1,4 +1,4 @@
-\documentclass[openany,twoside, notitlepage,letterpaper,11pt]{book}
+\documentclass[openany,twoside, letterpaper,11pt]{book}
 
 %%% These are the packages that are used
 \input{./resources/Packages}
@@ -24,6 +24,15 @@
 %Begins title page.	
 \maketitle
 
+%Begins blank page.
+\thispagestyle{empty}
+\newpage
+\vspace*{\stretch{1}}
+\begin{center}
+	\textit{This page intentionally left blank.\\ (Yes, this is a contradiction.)}
+\end{center}
+\vspace*{\stretch{1}}	
+\newpage  % Start new page after.
 
 %Begins table of contents
 \tableofcontents
