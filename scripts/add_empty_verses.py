@@ -25,9 +25,11 @@ def append_bverse(tex_file, num_verses):
     
     # Append \bverse{} lines
     with open(tex_file, "a", encoding="utf-8") as f:
+        verseCount = 0
         f.write("\n")
         for _ in range(num_verses):
-            f.write("\\bverse{}\n")
+            verseCount += 1
+            f.write(f"%verse {verseCount}\n \\bverse{{}}\n")
     print(f"Appended {num_verses} \\bverse{{}} lines to '{tex_file}'.")
 
 
