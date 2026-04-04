@@ -286,6 +286,7 @@
 	\end{flushright}
 }
 \newcommand{\bmarkerdown}[1]{%
+    \addcontentsline{toc}{subsection}{#1}%
 	\bmarker{#1 \faArrowCircleDown}
 }
 \newcommand{\bmarkerup}[1]{%
@@ -357,11 +358,12 @@
 \newcommand{\people}[1]{#1\index{Peoples:#1}}
 
 % These words are often added when translating to English. This is always ittalicized, so this command is just to save time.
-\newcommand{\was}{\textit{was} }
-\newcommand{\that}{\textit{that} }
-\newcommand{\are}{\textit{are} }
-\newcommand{\were}{\textit{were} }
-\newcommand{\is}{\textit{is} }
+\newcommand{\was}{\textit{was}\xspace}
+\newcommand{\that}{\textit{that}\xspace}
+\newcommand{\are}{\textit{are}\xspace}
+\newcommand{\were}{\textit{were}\xspace}
+\newcommand{\is}{\textit{is}\xspace}
+\newcommand{\here}{\textit{here}\xspace}
 
 % Simplifying some names and places for easier writing.
 \newcommand{\Adam}{\name{Adam}\xspace}
@@ -370,5 +372,6 @@
 \newcommand{\Isaac}{\name{Isaac}\xspace}
 \newcommand{\Moses}{\name{Moses}\xspace}
 \newcommand{\Abraham}{\name{Abraham}\xspace}
+\newcommand{\Joseph}{\name{Joseph}\xspace}
 \newcommand{\Sarah}{\name{Sarah}\xspace}
 \newcommand{\Egypt}{\location{Egypt}\xspace}
