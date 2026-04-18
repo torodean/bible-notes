@@ -8,7 +8,7 @@
 
 % Define the version number here
 % This is automatically incremented when using the commitAll.sh script.
-\newcommand{\version}{Version 0.0100}
+\newcommand{\version}{Version 0.0101}
 
 % Define title, author, and date
 \title{\includegraphics[scale=0.3]{./images/icon.jpg} \vspace{.5cm} \\Antonius' Bible Notes Compendium: \\ A Study of the Scriptures \\ --- \\ \version}
@@ -32,7 +32,7 @@
 %\end{center}
 
 %Copywrite page
-\include{copywrite}
+\include{frontmatter/copywrite}
 
 % Print TOC entries in two columns
 \cleardoublepage
@@ -43,7 +43,7 @@
 
 \pagestyle{fancy}
 %Preface page
-\include{preface}
+\include{frontmatter/preface}
 
 %Begins blank page.
 %\thispagestyle{empty}
@@ -136,7 +136,8 @@
 
 %Begin the backmatter.
 \backmatter
-\input{references}
+\input{backmatter/lexicon}
+\input{backmatter/references}
 \printindex
 
 \end{document}
