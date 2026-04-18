@@ -347,6 +347,47 @@
 
 
 
+% Some color codes for the lexicon color-coding.
+\definecolor{greekcolor}{RGB}{0,102,204}   % blue
+\definecolor{hebrewcolor}{RGB}{153,0,0}    % dark red
+\definecolor{aramaiccolor}{RGB}{0,153,0}   % green
+\definecolor{englishcolor}{RGB}{102,51,153} % purple
+
+% Greek entry
+% Usage: \lexgreek{Strong's number}{word}{pronunciation}{english}{definition}{references}
+\newcommand{\lexgreek}[6]{%
+	\textcolor{greekcolor}{%
+		\textbf{G} [#1] \ \textbf{#2}, \textit{#3} (#4):\\ $\diamond$ #5 #6%
+	}\par
+}
+
+% Hebrew entry
+% Usage: \lexhebrew{Strong's number}{word}{pronunciation}{english}{definition}{references}
+\newcommand{\lexhebrew}[6]{%
+	\textcolor{hebrewcolor}{%
+		\textbf{H} [#1] \ \textbf{#2}, \textit{#3} (#4):\\ $\diamond$ #5 #6%
+	}\par
+}
+
+% Aramaic entry
+% Usage: \lexaramaic{Strong's number}{word}{pronunciation}{english}{definition}{references}
+\newcommand{\lexaramaic}[6]{%
+	\textcolor{aramaiccolor}{%
+		\textbf{A} [#1] \ \textbf{#2}, \textit{#3} (#4):\\ $\diamond$ #5 #6%
+	}\par
+}
+
+% English entry
+% Usage: \lexenglish{word}{definition}{references}
+\newcommand{\lexenglish}[3]{%
+	\textcolor{englishcolor}{%
+		\textbf{E} \ \textbf{#1}: #2 #3%
+	}\par
+}
+
+
+
+
   
 % Used for differentiating names.
 \newcommand{\name}[1]{\textsc{#1}\index{Names:!#1}}
