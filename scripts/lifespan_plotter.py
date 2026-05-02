@@ -2,7 +2,13 @@
 
 import matplotlib.pyplot as plt
 
-# Example data: (Name, Birth Year, Lifespan)
+# Template to copy/paste from. Example data: (Name, Birth Year, Lifespan)
+people_template = [
+    (), 
+    ()
+]
+
+# People from Adam to Abraham.
 people = [
     ("Adam", 0, 930),        # Genesis 5
     ("Seth", 130, 912),      # Genesis 5
@@ -24,6 +30,13 @@ people = [
     ("Nahor", 1849, 119),    # Genesis 11
     ("Terah", 1878, 205),    # Genesis 11
     ("Abram", 1948, 175)     # Genesiss 25:8
+]
+
+# People of Abraham and his descendants.
+people2 = [
+    ("Abraham", 1948, 175),  # Genesis 25:8
+    ("Ishmael", 0 , 137),    # Genesis 25:17 TODO - Determine year.
+    ("", , )
 ]
 
 # Sort people by birth year descending
