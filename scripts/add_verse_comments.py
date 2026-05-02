@@ -2,23 +2,23 @@
 """
 add_verse_comments.py
 
-Recursively or selectively scans .tex files and inserts %verse comments above
+Recursively or selectively scans .tex files and inserts % verse comments above
 each \bverse{} occurrence.
 
 Rules:
-- Only processes files with > MIN_VERSE_COUNT \bverse occurrences
-- Adds sequential verse numbering starting at 1 per file
-- Each FILE resets numbering
+- Only processes files with > MIN_VERSE_COUNT \bverse occurrences. This prevents some of the layout and template files from being updated unintentionally.
+- Adds sequential verse numbering starting at 1 per file.
+- Each FILE resets numbering.
 - If multiple \bverse occurrences appear on the SAME LINE, they are grouped:
-    \bverse{}\bverse{}\bverse{}  -> %verse 1-3
+    \bverse{}\bverse{}\bverse{}  -> % verse 1-3
 - If \bverse occurs on separate lines, each line is numbered independently:
-    \bverse{}                   -> %verse 1
-    \bverse{}                   -> %verse 2
-- Does NOT modify blank lines or add paragraph breaks
+    \bverse{}                   -> % verse 1
+    \bverse{}                   -> % verse 2
+- Does NOT modify blank lines or add paragraph breaks.
 
 Supports:
-- Single file mode
-- Directory mode (recursive)
+- Single file mode.
+- Directory mode (recursive).
 - Default: ../books
 """
 
@@ -33,7 +33,7 @@ import argparse
 VERSE_PATTERN = re.compile(r"\\bverse")
 MIN_VERSE_COUNT = 4
 
-DEBUG = False
+DEBUG = True
 
 def log(msg):
     if DEBUG:
@@ -97,11 +97,11 @@ def analyze_lines(lines):
 # -----------------------------
 def format_comment(start, end):
     """
-    Create %verse comment.
+    Create % verse comment.
     """
     if start == end:
-        return f"%verse {start}"
-    return f"%verse {start}-{end}"
+        return f"% verse {start}"
+    return f"% verse {start}-{end}"
 
 
 # -----------------------------
@@ -110,7 +110,7 @@ def format_comment(start, end):
 def process_file(file_path):
     """
     Insert verse comments above relevant lines.
-    Skips lines that already have a %verse comment immediately above them.
+    Skips lines that already have a % verse comment immediately above them.
     """
     try:
         log(f"\n=== Processing file: {file_path} ===")
@@ -135,8 +135,8 @@ def process_file(file_path):
             log(f"Line {line_idx} (adjusted {adjusted_idx}) has {count} \\bverse")
 
             # Skip if already processed
-            if adjusted_idx > 0 and lines[adjusted_idx - 1].lstrip().startswith("%verse"):
-                log(f"  -> Skipped (already has %verse)")
+            if adjusted_idx > 0 and lines[adjusted_idx - 1].lstrip().startswith("% verse"):
+                log(f"  -> Skipped (already has % verse)")
                 verse_counter += count
                 continue
 
@@ -164,7 +164,7 @@ def process_file(file_path):
 # DRIVER
 # -----------------------------
 def main():
-    parser = argparse.ArgumentParser(description="Add %verse comments to LaTeX files.")
+    parser = argparse.ArgumentParser(description="Add % verse comments to LaTeX files.")
 
     parser.add_argument(
         "-f", "--file",
