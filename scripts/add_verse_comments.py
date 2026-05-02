@@ -3,17 +3,17 @@
 add_verse_comments.py
 
 Recursively or selectively scans .tex files and inserts % verse comments above
-each \bverse{} occurrence.
+each \bverse occurrence.
 
 Rules:
 - Only processes files with > MIN_VERSE_COUNT \bverse occurrences. This prevents some of the layout and template files from being updated unintentionally.
 - Adds sequential verse numbering starting at 1 per file.
 - Each FILE resets numbering.
 - If multiple \bverse occurrences appear on the SAME LINE, they are grouped:
-    \bverse{}\bverse{}\bverse{}  -> % verse 1-3
+    \bverse\bverse\bverse  -> % verse 1-3
 - If \bverse occurs on separate lines, each line is numbered independently:
-    \bverse{}                   -> % verse 1
-    \bverse{}                   -> % verse 2
+    \bverse                   -> % verse 1
+    \bverse                   -> % verse 2
 - Does NOT modify blank lines or add paragraph breaks.
 
 Supports:
@@ -160,9 +160,7 @@ def process_file(file_path):
     except Exception as e:
         print(f"Error processing {file_path}: {e}")
 
-# -----------------------------
-# DRIVER
-# -----------------------------
+
 def main():
     parser = argparse.ArgumentParser(description="Add % verse comments to LaTeX files.")
 

@@ -1,0 +1,14 @@
+% Chapter comment
+\bookchapter{Some Chapter text containing the word bverse.}
+
+\bverse 
+\bverse 
+\bverse\bverse\bverse 
+\bverse 
+\bverse 
+\bverse Some text. \bverse Some more text here. \bverse Even more text!
+\bverse 
+\bverse 
+\bverse 
+\bverse 
+\bverse \bverse \bverse 
