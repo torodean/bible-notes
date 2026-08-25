@@ -1,0 +1,151 @@
+\documentclass[]{letter}
+\usepackage{amsmath,amssymb, amscd,amsbsy, amsthm, enumerate}
+\usepackage[export]{adjustbox}
+\usepackage{lastpage}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage[unicode]{hyperref}
+\usepackage{tikz, pgfplots, xcolor, fancyhdr}
+\usepackage{multicol}
+\usepackage{lipsum}
+
+\makeatletter
+\newenvironment{thebibliography}[1]
+{\list{\@biblabel{\@arabic\c@enumiv}}%
+	{\settowidth\labelwidth{\@biblabel{#1}}%
+		\leftmargin\labelwidth
+		\advance\leftmargin\labelsep
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m}
+{\def\@noitemerr
+	{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist}
+\newcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
+\makeatother
+
+\begin{document}
+% If you want headings on subsequent pages,
+% remove the ``%'' on the next line:
+% \pagestyle{headings}
+
+\begin{letter}{To: Applied Research Laboratories,\\ \textit{Regarding Mandated Covid-19 Vaccination.}}
+	\date{ \includegraphics[width=0.17\textwidth]{./external-content.jpg}\\ \today}
+	
+	\opening{To whom it may concern,}
+
+\hspace{1cm}As per the recent executive orders by former vice president Joseph Biden, it has become a mandate that as an Applied Research Laboratories employee I will hereby be required to receive the SARS-CoV-2 vaccination. It is with a resolute belief that I will have to respectfully decline the vaccination at this time due to personal religious and moral beliefs. In this letter I will try to give a brief yet succinct description of why this is the case. 
+
+\hspace{1cm}For my entire life, I have striven to be a student of science, logic and reason. Along with multiple STEM degrees, I have also obtained a degree in biblical history and philosophy pertaining to the christian Bible and other religious philosophies. Along my studies, I have found that there is great wisdom and understanding contained in the Holy Bible that perfectly complements science and nature. I hold the belief that this book is the inspired word of God and thus do my best to understand and live by the teachings it presents. Over the years, I have dedicated every Sabbath (Friday sundown to Saturday sundown), along with numerous other `holy days' throughout the year as rest days in which I do no work. Rather, on these days I attend church services and further my studies. Those around me are generally aware of this commitment and can be used as just one example to demonstrate my dedication to the beliefs I hold.
+
+\hspace{1cm}The church organization that I regularly attend and could consider myself affiliated with is the United Church of God (UCG). With that said, it is both my own personal belief and UCGs that the true church of God is not an organization made my men, but rather a spiritual organism and body of believers that could be spread throughout numerous organizations \cite{UCG:fundamentalBeliefs}. For this reason, I will not cite the beliefs of an organization as my objections to the SARS-CoV-2 vaccine regimen, but rather the Bible itself, where my beliefs stem from. 
+
+\hspace{1cm}As it pertains to SARS-CoV-2 vaccinations, I could list many reasons throughout the Bible that lead me to believe I must decline. For the sake of this letter, I shall only briefly explain one of importance; but could present and discuss more if requested. Throughout the Bible, there is a recurring theme of what some refer to as the `spirit of the law', which some classify as an idiomatic antithesis. The `letter of the law' is often a phrase referring to the laws of the Bible as they are written - a literal interpretation. Although a literal interpretation is often very helpful in understanding and learning the teachings of the Bible for the first time, there is generally much deeper meanings and lessons to be gained from the seemingly simple laws. Jesus often elaborated into the intent and `spirit of the law' to those around him. I present two examples found below.
+
+\begin{quotation}
+	``You have heard that it was said to those of old, `You shall not murder, and whoever murders will be in danger of the judgment.' But I say to you that whoever is angry with his brother without a cause shall be in danger of the judgment." - Mathew 5:21-22
+\end{quotation}
+
+\begin{quotation}
+	``You have heard that it was said to those of old, `You shall not commit adultery.’ But I say to you that whoever looks at a woman to lust for her has already committed adultery with her in his heart." - Mathew 5:27-28
+\end{quotation}
+
+\hspace{1cm}A repeating theme of the Bible is that God's people are to keep themselves Holy and separate from others. We are taught that our bodies belong to God and we are to treat them as such by taking care of them the best we are able. 
+
+\begin{quotation}
+	"Do you not know that you are the temple of God and that the Spirit of God dwells in you? If anyone defiles the temple of God, God will destroy him. For the temple of God is holy, which temple you are." - 1 Corinthians 3:16-17
+\end{quotation}
+
+\hspace{1cm}One of the fundamental beliefs of UCG is commonly referred to as `God's Food Laws'. One such way of keeping ourselves Holy is by keeping the food laws described in the Bible. The food laws were given to ancient Israel so that they could separate themselves and keep themselves from `unclean' things. Here is a short example of part of the food laws.
+
+\begin{quotation}
+	"These are the animals which you may eat: the ox, the sheep, the goat, the deer, the gazelle, the roe deer, the wild goat, the mountain goat, the antelope, and the mountain sheep. And you may eat every animal with cloven hooves, having the hoof split into two parts, and that chews the cud, among the animals. Nevertheless, of those that chew the cud or have cloven hooves, you shall not eat, such as these: the camel, the hare, and the rock hyrax; for they chew the cud but do not have cloven hooves; they are unclean for you. Also the swine is unclean for you, because it has cloven hooves, yet does not chew the cud; you shall not eat their flesh or touch their dead carcasses." - Deuteronomy 14:4-8
+\end{quotation}
+
+\hspace{1cm}The listed scriptures above are just one section of the biblical food laws. I have kept these food laws for my entire life and used them as a basis for diet and health and attribute it to playing a major role why I am in near perfect health. It is important to note that there is also an instruction to not touch their dead carcasses, which directly implies that it's not just the act of eating that makes these unclean to someone. When examining these food laws, it's easy to see that there is a common theme among the unclean animals. These are typically bottom feeders and the animals that do not have robust digestive and/or toxin systems. It is easy to imagine from a scientific point of view that the diet and digestive systems of wild animals can largely effect their value as nutritious foods. Just a few quick examples include but are of course not limited to: 
+
+\begin{itemize}
+	\item The only source of human infections in Denmark for Yersinia enterocolitica being traced back to pork products \cite{unclean: Pork}.
+	\item "The animal health hazards associated with the importation of pork and pork products include four viral agents: foot and mouth disease, classical swine fever (hog cholera), African swine fever, and swine vesicular disease viruses" \cite{unclean: Pork 2}
+	\item "Food poisoning caused by shellfish is not uncommon." \cite{unclean: shellfish}
+\end{itemize}
+
+\hspace{1cm}The above three examples demonstrate evidence to support `the letter of the law' when it comes to God's food laws. The first part of Deuteronomy is to me the key to understanding the `spirit of the law' in this context. 
+
+\begin{quotation}
+	``For you are a holy people to the Lord your God, and the Lord has chosen you to be a people for Himself, a special treasure above all the peoples who are on the face of the earth. \textit{You shall not eat any detestable thing.}" - Deuteronomy 14:2-3
+\end{quotation}
+
+\hspace{1cm}This last part refers to `detestable' things. In the Greek, detestable can be translated as ``a disgusting thing, abomination, abominable'' \cite{Strongs}. It is my belief that the `spirit of the law' here boils down to us using our knowledge to the best of our abilities to make educated decisions regarding health on what we put into our bodies. If something can be considered detestable, we are to avoid it. As a few examples not listed directly in the biblical food laws, some things I strictly avoid due to considering them a violation of Deuteronomy 14:3 include Tartrazine (Yellow 5), Aspartame, Sucralose, fully hydrogenated vegetable oils, margarine and more. 
+
+\hspace{1cm}By combining the principles that these scriptures teach about keeping the body Holy through use of avoiding certain things, I have thus taken it upon myself to determine whether or not the SARS-CoV-2 vaccination regimen should be something that could be considered unclean and thus should be avoided. 
+
+\begin{quotation}
+	``Test all things; hold fast what is good." - 1 Thessalonians 5:21
+\end{quotation}
+
+\hspace{1cm}As part of my religious belief (as the above scripture states) and obligation as a scientist, I ensure that a decision such as this has not been taking lacking evidence or support. As this letter is one concerning a religious exemption and not scientific one, I shall only list a few bullet points of many that support how I have come to this conclusion.
+
+\begin{itemize}
+	\item The SARS-CoV-2 spike protein which is produced by the mRNA vaccinations has been shown to trigger pro-inflamatory responses on brain cells \cite{covid: spike} and impairs Endothelial function \cite{covid: spike2}.
+	\item Natural immunity has been shown to confer longer lasting and stronger protection against SARS-CoV-2 variants \cite{covid: natural}.
+	\item There are alternative treatments for SARS-CoV-2 that have much longer safety records such as N-Acetylcysteine (NAC), Ivermectin, exercise, etc\cite{Ivermectin}.
+	\item The Vaccine Adverse Event Reporting System (VAERS) has been considered extremely useful in the scientific community and has raised numerous red flags about the various potential side effects and their rates among vaccinated individuals. The Yellow Card system in the UK has similar results \cite{Yellow Card}.
+	\item There have been multiple published papers discussing potential autoimmune issues \cite{prion} and a possible triggering of antibody-dependent enhancement (ADE), which would lead to a worsening of disease\cite{ADE}. 
+\end{itemize}
+
+\hspace{1cm}Based on research from the above sources, it seems to me like there are many potentially dangerous risks from receiving the SARS-CoV-2 vaccinations. This does not seem like something that I could risk in good conscious given that there are other effective alternative methods moving forward in this `pandemic'. VAERS and other reporting systems have shown that there is a large potential for side effects - and that is only those short term ones that have been observed and reported. The effects that the spike protein have been shown to have on the body alone is enough to conclude that the mRNA programmed to create it is not a wise choice. Furthermore, there are claims that diluting the bodies antibodies against the spike protein (which is precisely what the mRNA vaccines do) may lead to ADE effects - definitely not a positive thing. With all of these things considered, I would consider the SARS-CoV-2 vaccinations as unclean and a potential `detestable thing' to be avoided.
+
+\hspace{1cm}In the past, the few times I have taken pharmaceuticals, I have shown signs of allergic reactions. This was predominately when I was younger before I began checking labels and inquiring to what was in drugs such as this. The most recent case was some Ibuprofen that I took, which caused my gums to bleed and I was thereafter spitting up blood for a few days. Like most pharmaceuticals I have looked into, I have concluded that the SARS-CoV-2 vaccination regimen is unclean for consumption and therefore I \textbf{cannot receive such without willfully violating `the temple of God'}.
+
+
+\signature{Antonius Torode}
+
+\closing{Sincerely,}
+
+\newpage
+\large{References}
+
+\begin{thebibliography}{9}
+	{\footnotesize
+		\bibitem{UCG:fundamentalBeliefs}https://www.ucg.org/fundamental-beliefs-of-the-united-church-of-god	
+		
+		\bibitem{unclean: Pork} B. Nielson et al. "Public health and pork and pork products: regional perspectives of Denmark." Revue Scientifique et Technique (International Office of Epizootics), 1997, 12 (2), 513-524
+		
+		\bibitem{unclean: Pork 2} Farez S, Morley RS. "Potential animal health hazards of pork and pork products." Revue Scientifique et Technique (International Office of Epizootics), 01 Apr 1997, 16(1):65-78
+			
+		\bibitem{unclean: shellfish} C. Y. Kao "Paralytic  Shellfish Poisoning" Algal toxins in seafood and drinking water(1993), Chapter 4. 
+		
+		\bibitem{Strongs} Strong, James. ``Strong's Exhaustive Concordance of the Bible." Updated ed. Peabody, MA: Hendrickson Publishers, 2007.
+		
+		\bibitem{covid: spike} Buzhdygan TP, et. al. ``The SARS-CoV-2 spike protein alters barrier function in 2D static and 3D microfluidic in-vitro models of the human blood-brain barrier.'' Neurobiol Dis. 2020 Dec;146:105131. doi: 10.1016/j.nbd.2020.105131. Epub 2020 Oct 11. PMID: 33053430; PMCID: PMC7547916.
+		
+		\bibitem{covid: spike2} Lei Y, Zhang J, Schiavon CR, et al. ``SARS-CoV-2 Spike Protein Impairs Endothelial Function via Downregulation of ACE 2." Circ Res. 2021;128(9):1323-1326. doi:10.1161/CIRCRESAHA.121.318902
+		
+		\bibitem{covid: natural} Sivan Gazit, MD MA. et. al. "Comparing SARS-CoV-2 natural immunity to vaccine-induced immunity: 
+		reinfections versus breakthrough infections." medRxiv. August 25, 2021. Preprint. https://doi.org/10.1101/2021.08.24.21262415
+		
+		\bibitem{Ivermectin} Morimasa Yagisawa. et. al. ``Global trends in clinical studies of ivermectin  in COVID-19". The Japanese Journal of Antibiotics. Mar. 2021.
+		
+		\bibitem{NAC} Andri Andreou. et. al. ``COVID-19: The Potential Role of Copper and N-acetylcysteine (NAC) in a Combination of Candidate Antiviral Treatments Against SARS-CoV-2". April 17, 2020. In Vivo. Vol. 34, Issue 3 suppl. 
+		
+		\bibitem{VAERS} Scott Mclachlan. et. al. "Analysis of COVID-19 vaccine death reports from the Vaccine Adverse Events Reporting System (VAERS) Database Interim: Results and Analysis". ResearchGate. June 2021. Preprint. doi: 10.13140/RG.2.2.26987.26402
+		
+		\bibitem{Yellow Card} Dr. Tess Lawrie. "Urgent preliminary report of Yellow Card data up to 26th May 2021". Medicines and Healthcare Products Regulatory
+		 Agency. 9. June 2021. Letter.
+		 
+		 \bibitem{prion} Stephanie Seneff. et. al. "Worse Than the Disease? Reviewing Some Possible Unintended Consequences of the mRNA Vaccines Against COVID-19". International Journal of Vaccine Theory, Practice, and Research 2(1), May 10, 2021.
+		 
+		 \bibitem{ADE} Sheng-Fan Wang. et. al. "Antibody-dependant SARS-CoV infection is mediated by antibodies against spike protein". Biochemical and Biophysical Research Communications. 22 August 2014.
+	}
+\end{thebibliography}
+
+%enclosure listing
+%\encl{}
+
+\end{letter}
+\end{document}
