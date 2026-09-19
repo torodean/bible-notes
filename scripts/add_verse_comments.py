@@ -3,7 +3,8 @@
 add_verse_comments.py
 
 Recursively or selectively scans .tex files and inserts % verse comments above
-each \bverse occurrence.
+each \bverse occurrence. This labels the verses inline in the .tex files so they
+can be discovered easily.
 
 Rules:
 - Only processes files with > MIN_VERSE_COUNT \bverse occurrences. This prevents some of the layout and template files from being updated unintentionally.
