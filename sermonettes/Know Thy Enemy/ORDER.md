@@ -5,6 +5,6 @@
 3. The Old Gods
 4. Baal
 5. Ishtar
-6. Symbolism
-7. Posession
+6. A Guard Against Possession
+7. Sumbolism
 8. Your Enemy Knows You (Conclusion)
